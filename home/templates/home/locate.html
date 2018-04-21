@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="container mx-auto col-md-6" style="margin-top: 10%">  
+  <h2>
+    Restaurants near you
+  </h2>
+ 
+  <div class="container-fluid">
+    
+  {% for result in results %}
+  <div class="row mx-auto col-md-8">
+    <div class="card mx-auto">
+  <img class="card-img-top" src="{{result.icon}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{result.name}}</h5>
+    <p class="card-text">{{result.vicinity}}</p>
+    <a href="/home/book/" class="btn btn-primary">Book</a>
+  </div>
+</div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

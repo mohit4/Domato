@@ -1,0 +1,26 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="container mx-auto col-md-6" style="margin-top: 10%">  
+  
+  <div class="row mx-auto col-md-12">
+    <div class="container">
+      <div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">OTP Sent</h4>
+  <p>You've received the OTP on your mobile device.</p>
+  <hr>
+      <div class="jumbotron">
+        <form class="form-inline" method="post" action="/home/locate/" name="form_name" id="form_id">
+          {% csrf_token %}
+          <div class="form-group mx-sm-3 mb-2">
+            <label for="entered_otp" class="sr-only">Enter OTP</label>
+            <input type="text" class="form-control" id="entered_otp" placeholder="Please enter your OTP">
+          </div>
+          <a type="submit" href="/home/success" class="btn btn-primary mb-2">Verify OTP</a>
+        </form>
+    </div>
+</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
